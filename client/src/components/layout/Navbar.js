@@ -15,7 +15,6 @@ class Navbar extends Component {
             >
               <i className="material-icons">code</i>
               MERN
-              
             </Link>
           </div>
         </nav>

@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-
-
 class Landing extends Component {
   render() {
     return (
@@ -16,7 +13,7 @@ class Landing extends Component {
             </h4>
             <p className="flow-text grey-text text-darken-1">
               Create a (minimal) full-stack app with user authentication via
-              passport and JWTs
+              passport and JWTs
             </p>
             <br />
             <div className="col s6">
@@ -51,5 +48,4 @@ class Landing extends Component {
     );
   }
 }
-
 export default Landing;
