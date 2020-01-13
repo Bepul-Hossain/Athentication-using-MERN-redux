@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { loginUser } from "../../actions/authActions"
-import className from "classnames"
+import classnames from "classnames"
 
 class Login extends Component{
     constructor(){
@@ -15,6 +15,12 @@ class Login extends Component{
             errors: {}
         };
     }
+    componentDidMount() {
+        // If logged in and user navigates to Login page, should redirect them to dashboard
+        if (this.props.auth.isAuthenticated) {
+          this.props.history.push("/dashboard");
+        }
+      }
     componentWillReceiveProps(nextProps){
         if(nextProps.auth.isAuthenticated){
             this.props.history.push("/dashaboard")
@@ -72,7 +78,7 @@ class Login extends Component{
                                     error = {errors.email}
                                     id = "email"
                                     type = "email"
-                                    className = { classNames("",{
+                                    className = { classnames("",{
                                         invalid: errors.email || errors.emailnotfound
                                     })}
                                 />
@@ -124,7 +130,7 @@ class Login extends Component{
     }
 }
 
-Login.prototype = {
+Login.prototypes = {
     loginUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
