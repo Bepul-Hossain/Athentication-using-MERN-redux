@@ -1,6 +1,8 @@
 const Validator = require("validator");
 const isEmpty = require("is-empty");
 
+console.log('validatron register');
+
 module.exports = function validateRegisterInput(data) {
   let errors = {};
 
